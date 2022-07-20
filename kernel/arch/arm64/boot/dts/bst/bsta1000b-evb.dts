@@ -430,6 +430,13 @@
             function = "gpio";
         };
     };
+    qspi1_cs0: qspi1_cs0 {
+        mux {
+            pins = "qspi1_cs0";
+            function = "gpio";
+        };
+    };
+
 };
 
 &uart0 {
@@ -595,7 +602,7 @@
 
     /* gpio_special_func_pinctrl:gpio_num_29 gmac0 reset pin; debug_4 and debug_5 as gpio */
     //pinctrl-0 = <gpio_special_func_pinctrl>;
-    pinctrl-0 = <&sdemmc0_pinctrl  &sdemmc1_pinctrl  &debug_pinctrl  &vout_pinctrl  &vin_pinctrl>;
+    pinctrl-0 = <&sdemmc0_pinctrl  &sdemmc1_pinctrl  &debug_pinctrl  &vout_pinctrl  &vin_pinctrl &qspi1_cs0>;
 };
 &gpio1 {
     status = "okay";
@@ -678,7 +685,7 @@
 };
 
 &qspi1 {
-    status = "okay";
+    status = "disable";
     //wp_mode;
     qspi1-nor1@0 {
         #address-cells = <1>;
