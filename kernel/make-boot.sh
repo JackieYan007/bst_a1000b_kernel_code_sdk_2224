@@ -28,7 +28,7 @@ fi
 
 cp -fr build/arch/arm64/boot/dts/bst/*.dtb ./bootfs
 cp -fr build/Image.itb ./bootfs
-make_ext4fs -l 128M -s $DIST_FILE ./bootfs
+make_ext4fs -l 256M -s $DIST_FILE ./bootfs
 if [ -n "$SUDO_USER" ]; then
     sudo umount ./bootfs
 else
